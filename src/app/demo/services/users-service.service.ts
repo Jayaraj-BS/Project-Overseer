@@ -12,15 +12,6 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  //  getLoggedinUserDetails(email: string): Observable<any> {
-  //   return this.http.get(`${environment.apiUrl}/users/get-loggedin-user`, { params: { email } }).pipe(
-  //     map((resp: any) => {
-  //       this.userDetails = resp
-  //       return resp
-  //     })
-  //   )
-  // }
-
   getUserDetails() {
     return this.userDetails;
   }

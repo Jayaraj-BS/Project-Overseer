@@ -48,9 +48,9 @@ export class AllTasksListComponent {
   //  console.log(this.userEmail,"GOTEMAILLL");
 
    if(this.userEmail){
-    this.userService.getLoggedinUserDetails(this.userEmail).subscribe((resp:any) => {
-      // console.log(resp,"gotuserdetailsssss");
-    })
+    // this.userService.getLoggedinUserDetails(this.userEmail).subscribe((resp:any) => {
+    //   // console.log(resp,"gotuserdetailsssss");
+    // })
    }
 
    this.projectService.getAllTasks().subscribe((resp : any) => {

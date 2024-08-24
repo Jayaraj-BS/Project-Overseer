@@ -10,22 +10,22 @@ export class LoginAndRegisterService {
 
   constructor(private http: HttpClient) { }
 
-  login(params: any): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/users/login`, params).pipe(
-      map((resp: any) => {
-        console.log(resp, "LOGINRESPONSE");
-        return resp;
-      })
-    );
-  }
+  // login(params: any): Observable<any> {
+  //   return this.http.post(`${environment.apiUrl}/users/login`, params).pipe(
+  //     map((resp: any) => {
+  //       console.log(resp, "LOGINRESPONSE");
+  //       return resp;
+  //     })
+  //   );
+  // }
 
 
-  register(params: any): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/users/register`, params).pipe(
-      map((resp: any) => {
-        console.log(resp, "RegisterRESPONSE");
-        return resp;
-      })
-    );
-  }
+  // register(params: any): Observable<any> {
+  //   return this.http.post(`${environment.apiUrl}/users/register`, params).pipe(
+  //     map((resp: any) => {
+  //       console.log(resp, "RegisterRESPONSE");
+  //       return resp;
+  //     })
+  //   );
+  // }
 }

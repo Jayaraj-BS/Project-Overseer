@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Projects</h2>
+    <button type="button" class="btn btn-primary" (click)="addProject()"
+    style="background-color: steelblue; border-color: steelblue;">Add New Project</button>
+  </div>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Manager</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of projects; let i = index">
+       <td>{{i + 1}}</td>
+       <td>{{item.projectName}}</td>
+       <td>{{item.projectManager}}</td>
+       <td>{{item.projectStatus}}</td>
+       <td>{{item.projectCategory}}</td>
+       <td>
+        <button
+        class="btn btn-primary me-2 small-btn"
+        style="background-color: steelblue; border-color: steelblue;"
+        (click)="editProject(item)">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+        <button
+        class="btn btn-danger small-btn"
+        (click)="deleteProject(item)">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<ng-template #editProjectData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Project</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" [(ngModel)]='selectedProject.projectName' name="name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Manager</label>
+          <input type="text" id="description" [(ngModel)]='selectedProject.projectManager' name="projectManager" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Status</label>
+          <input type="text" id="description" [(ngModel)]='selectedProject.projectStatus' name="projectStatus" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Contact Information</label>
+          <input type="text" id="description" [(ngModel)]='selectedProject.projectContactInformation' name="projectContactInformation" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Project Category</label>
+          <input type="text" id="description" [(ngModel)]='selectedProject.projectCategory' name="projectCategory" class="form-control" required />
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+		<button type="button" class="btn btn-success savebtn" (click)="saveProject()">Submit</button>
+	</div>
+
+</ng-template>

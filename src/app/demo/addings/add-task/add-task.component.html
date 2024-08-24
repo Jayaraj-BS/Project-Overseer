@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 style="color: steelblue; font-family: sans-serif;
+    font-weight: bold; font-size: 20px;">Add New Task</h2>
+    <button type="button" class="btn btn-primary" (click)="allTasks()"
+    style="background-color: steelblue; border-color: steelblue;">View All Tasks</button>
+  </div>
+
+  <div class="form-container">
+    <form>
+      <div class="form-group">
+        <label>Task Name</label>
+        <input type="text" id="name" [(ngModel)]="task.taskName" name="taskName" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label>Project</label>
+        <input type="text" id="project" [(ngModel)]="task.project" name="project" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label>Type</label>
+        <select [(ngModel)]="task.taskStatus" class="form-select" name="taskStatus" required>
+          <option *ngFor="let statusItem of status" [value]="statusItem.value" class="dropdown-option">
+            {{ statusItem.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Add Description</label>
+        <textarea id="description" [(ngModel)]="task.taskDetails" name="taskDetails" class="form-control" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" (click)="addTask()">Add Task</button>
+    </form>
+  </div>
+
+</div>

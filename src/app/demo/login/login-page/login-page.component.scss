@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.navbar-right .btn {
+  margin-left: 10px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: radial-gradient(circle, white 20%, skyblue 100%);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #000; /* Default text color */
+  font-size: 16px;
+  padding: 10px 15px;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent; /* Default border */
+  border-radius: 5px; /* Optional: rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+.active-link {
+  color: #ffffff; /* Text color for active link */
+  background-color: #007bff; /* Background color for active link */
+  font-weight: bold;
+  padding: 8px 13px; /* Adjust padding to accommodate the background */
+}
+
+
+
+.btn-primary {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-google {
+  background-color: #4285f4;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.form-footer {
+  margin-top: 10px;
+}
+
+.form-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  font-size: 14px;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.logoTitle {
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Courier, monospace;
+  margin-left: 10px;
+  margin-bottom: 5px; /* Adjusted margin-bottom for Project Overseer */
+}
+
+h2.logoTitle {
+  margin-top: 0px; /* Adjusted margin-top for Signup */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 550px;
+  top: 380px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff;
+}
+
+
+

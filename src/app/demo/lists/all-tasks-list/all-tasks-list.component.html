@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>All Tasks</h2>
+    <button type="button" class="btn btn-primary" (click)="addProject()"
+    style="background-color: steelblue; border-color: steelblue;">Add New Task</button>
+  </div>
+  <p style="font-size: 18px;">Drag and Rearrange the Tasks as per requirement...</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Project</th>
+        <th>Task Type</th>
+        <th>Details</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+      <tr *ngFor="let item of tasks; let i = index" cdkDrag>
+        <td>{{i + 1}}</td>
+        <td>{{item.taskName}}</td>
+        <td>{{item.project}}</td>
+        <td>
+          <div class="custom-dropdown">
+              <select [(ngModel)]="item.taskStatus" class="form-select">
+                  <option *ngFor="let statusItem of status" [value]="statusItem.value" class="dropdown-option">
+                      {{ statusItem.label }}
+                  </option>
+              </select>
+          </div>
+      </td>
+      <td>{{item.taskDetails}}</td>
+        <td>
+          <button
+            class="btn btn-primary me-2 small-btn"
+            style="background-color: steelblue; border-color: steelblue;"
+            (click)="editProject(item)">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button
+            class="btn btn-danger small-btn"
+            (click)="deleteProject(item)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+<ng-template #editProjectData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Task</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label>Task Name</label>
+          <input type="text" id="name" [(ngModel)]="selectedTask.taskName" name="taskName" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Project</label>
+          <input type="text" id="project" [(ngModel)]="selectedTask.project" name="project" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label>Type</label>
+          <select [(ngModel)]="selectedTask.taskStatus" class="form-select" name="taskStatus" required>
+            <option *ngFor="let statusItem of status" [value]="statusItem.value" class="dropdown-option">
+              {{ statusItem.label }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Add Description</label>
+          <textarea id="description" [(ngModel)]="selectedTask.taskDetails" name="taskDetails" class="form-control" required></textarea>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+		<button type="button" class="btn btn-success savebtn" (click)="saveProject()">Submit</button>
+	</div>
+
+</ng-template>

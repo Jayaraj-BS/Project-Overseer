@@ -1,0 +1,53 @@
+<div class="signup-container">
+  <div class="navbar">
+    <div class="navbar-left">
+    </div>
+    <div class="navbar-right">
+      <a class="btn" [ngClass]="{'active-link': isActive('/login')}" routerLink="/login">Login</a>
+      <a class="btn" [ngClass]="{'active-link': isActive('/register')}" routerLink="/register">Signup</a>
+    </div>
+  </div>
+
+  <div class="signup-form">
+    <a href="#" class="d-flex justify-content-center">
+      <img src="assets/images/project-management.png"
+      class="projectLogo"
+      style="width: 100px; height: 80px;"/>
+    </a>
+    <p class="logoTitle">Project Overseer</p>
+    <h2 class="logoTitle">Signup</h2>
+    <form (ngSubmit)="signup()">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" placeholder="First Name" [(ngModel)]="firstName" name="firstName" required />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email" (input)="validateEmail($event)" [(ngModel)]="email" name="email" required />
+        </div>
+      </div>
+      <div *ngIf="showEmailErrorMessage" class="error-message s1 text-danger">
+        Please Provide Email in valid format
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Signup</button>
+      <div class="form-footer">
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+        <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
+          <img src="assets/images/authentication/google-icon.svg" />
+          Signup with Google</button>
+      </div>
+    </form>
+  </div>
+</div>

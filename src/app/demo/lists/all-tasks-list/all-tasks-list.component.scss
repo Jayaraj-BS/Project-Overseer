@@ -1,0 +1,114 @@
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: red !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: white !important;
+}
+
+.small-btn {
+  padding: 5px 10px; /* Adjust padding for smaller size */
+  font-size: 12px; /* Reduce font size */
+  height: 30px; /* Optionally, set a fixed height */
+  width: auto; /* Optionally, set a fixed width or keep it auto */
+}
+
+
+.form-container {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.form-control {
+  width: 90%;
+  padding: 7px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.cdk-drag-preview {
+  background-color: lightgray;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.cdk-drag-handle {
+  cursor: move;
+}
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 60%;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #666;
+  outline: none;
+}
+
+.dropdown-option {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-option:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Styling icons in options (not visible in most browsers) */
+.dropdown-option i {
+  margin-right: 8px;
+}
+
+
+
